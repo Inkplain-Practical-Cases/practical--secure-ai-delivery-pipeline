@@ -1,18 +1,7 @@
 # Secure AI Delivery Pipeline
 
-Reproducible secure AI service delivery with dependency locking, registry provenance, secret controls and rollback.
+Junior FDE learning case. STEP-1 implements offline typed release manifest validation with an allowlisted dependency policy and stable SHA-256 digest. This is not yet a production supply-chain pipeline.
 
-An Inkplain practical case: a real project built step by step.
+Install `python -m pip install -r requirements.lock`, test `python -m pytest -q`, run `uvicorn app.main:app`.
 
-## How this repository works
-
-Every step of the lesson has its own branch, and each one contains all steps up to it:
-
-```bash
-git clone https://github.com/Inkplain-Practical-Cases/practical--secure-ai-delivery-pipeline.git
-cd practical--secure-ai-delivery-pipeline
-git branch -r            # list the step branches
-git checkout step-01-…   # code after step 1
-```
-
-`main` holds the final, complete version.
+See STEP-1.md and STEP-1.crd. No live keys are needed.
