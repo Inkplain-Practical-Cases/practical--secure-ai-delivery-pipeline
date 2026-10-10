@@ -1,0 +1,23 @@
+# Matrix validates every learning branch and main with offline deterministic tests.
+name: Secure AI delivery matrix
+on:
+  push:
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      matrix:
+        python-version: ['3.12']
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: ${{ matrix.python-version }}
+      - name: Install locked runtime and test dependencies
+        run: python -m pip install -r requirements.lock
+      - name: Run safety regression suite
+        run: python -m pytest -q

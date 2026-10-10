@@ -1,8 +1,8 @@
 {
   "version": "1.0",
-  "name": "Secure AI Delivery Pipeline STEP-5",
+  "name": "Secure AI Delivery Pipeline STEP-6",
   "source": {
-    "revision": "step-05-approval-gates-staging-and-rollback"
+    "revision": "step-06-security-regressions-and-ci-matrix"
   },
   "flows": [
     {
@@ -11,11 +11,11 @@
     }
   ],
   "step": {
-    "no": 5,
+    "no": 6,
     "of": 6,
-    "title": "Approval gates staging and rollback",
-    "branch": "step-05-approval-gates-staging-and-rollback",
-    "previous": "STEP-4.crd",
+    "title": "Security regressions and CI matrix",
+    "branch": "step-06-security-regressions-and-ci-matrix",
+    "previous": "STEP-5.crd",
     "removed": []
   },
   "components": [
@@ -32,7 +32,7 @@
       "source": {
         "file": "app/features/feature_release/router.py",
         "symbol": "validate_release",
-        "revision": "step-05-approval-gates-staging-and-rollback",
+        "revision": "step-06-security-regressions-and-ci-matrix",
         "lines": [
           1,
           60
@@ -87,7 +87,7 @@
       "source": {
         "file": "app/features/feature_release/handlers/handle_validate_release.py",
         "symbol": "handle_validate_release",
-        "revision": "step-05-approval-gates-staging-and-rollback",
+        "revision": "step-06-security-regressions-and-ci-matrix",
         "lines": [
           1,
           60
@@ -142,7 +142,7 @@
       "source": {
         "file": "app/features/feature_release/services/service_validate_release.py",
         "symbol": "service_validate_release",
-        "revision": "step-05-approval-gates-staging-and-rollback",
+        "revision": "step-06-security-regressions-and-ci-matrix",
         "lines": [
           1,
           60
@@ -202,7 +202,7 @@
       "source": {
         "file": "app/providers/manifest/in_memory_manifest_provider.py",
         "symbol": "allowed_versions",
-        "revision": "step-05-approval-gates-staging-and-rollback",
+        "revision": "step-06-security-regressions-and-ci-matrix",
         "lines": [
           1,
           60
@@ -251,7 +251,7 @@
       "source": {
         "file": "app/features/feature_release/services/service_check_container_policy.py",
         "symbol": "service_check_container_policy",
-        "revision": "step-05-approval-gates-staging-and-rollback",
+        "revision": "step-06-security-regressions-and-ci-matrix",
         "lines": [
           1,
           14
@@ -305,7 +305,7 @@
       "source": {
         "file": "app/features/feature_release/services/service_verify_artifact_provenance.py",
         "symbol": "service_verify_artifact_provenance",
-        "revision": "step-05-approval-gates-staging-and-rollback",
+        "revision": "step-06-security-regressions-and-ci-matrix",
         "lines": [
           1,
           13
@@ -359,7 +359,7 @@
       "source": {
         "file": "app/features/feature_release/services/service_check_secret_policy.py",
         "symbol": "service_check_secret_policy",
-        "revision": "step-05-approval-gates-staging-and-rollback",
+        "revision": "step-06-security-regressions-and-ci-matrix",
         "lines": [
           1,
           10
@@ -413,7 +413,7 @@
       "source": {
         "file": "app/features/feature_release/services/service_decide_promotion.py",
         "symbol": "service_decide_promotion",
-        "revision": "step-05-approval-gates-staging-and-rollback",
+        "revision": "step-06-security-regressions-and-ci-matrix",
         "lines": [
           1,
           11
@@ -452,7 +452,7 @@
         }
       ],
       "attributes": {},
-      "step_change": "added"
+      "step_change": "unchanged"
     },
     {
       "id": "be.service_resolve_rollback",
@@ -467,7 +467,7 @@
       "source": {
         "file": "app/features/feature_release/services/service_resolve_rollback.py",
         "symbol": "service_resolve_rollback",
-        "revision": "step-05-approval-gates-staging-and-rollback",
+        "revision": "step-06-security-regressions-and-ci-matrix",
         "lines": [
           1,
           6
@@ -506,7 +506,7 @@
         }
       ],
       "attributes": {},
-      "step_change": "added"
+      "step_change": "unchanged"
     }
   ]
 }
