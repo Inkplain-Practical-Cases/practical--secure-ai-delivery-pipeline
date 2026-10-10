@@ -1,0 +1,8 @@
+# Keep developer secrets and repository history out of build context.
+.env
+.env.*
+!.env.example
+.git
+__pycache__
+.pytest_cache
+*.pyc
