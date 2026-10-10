@@ -4,7 +4,7 @@
     "slug": "secure-ai-delivery-pipeline",
     "name": "Secure AI Delivery Pipeline"
   },
-  "current": "inkp",
+  "current": "content",
   "stages": {
     "intro": {
       "status": "done",
@@ -33,7 +33,21 @@
       "started_at": "2026-10-10T10:03:47.282Z",
       "finished_at": "2026-10-10T11:46:58.312Z",
       "updated_by": "api-key:for-chatgpt-test-2"
+    },
+    "inkp": {
+      "status": "done",
+      "summary": "Verified six ordered .inkp diagrams, 40 linked Process Executor contracts and zero missing links via get_inkp_summary.",
+      "outputs": {
+        "tabs": 6,
+        "linked_documents": 40,
+        "missing_links": 0,
+        "inkp_path": "secure-ai-delivery-pipeline.inkp",
+        "inkp_url": "https://github.com/Inkplain-Practical-Cases/practical--secure-ai-delivery-pipeline/blob/main/secure-ai-delivery-pipeline.inkp"
+      },
+      "started_at": "2026-10-10T11:47:02.257Z",
+      "finished_at": "2026-10-10T11:47:02.257Z",
+      "updated_by": "api-key:for-chatgpt-test-2"
     }
   },
-  "updated_at": "2026-10-10T11:46:58.312Z"
+  "updated_at": "2026-10-10T11:47:02.257Z"
 }
