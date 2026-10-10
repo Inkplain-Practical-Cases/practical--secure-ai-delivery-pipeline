@@ -1,9 +1,9 @@
-# STEP-3: Immutable artifact and registry provenance
+# STEP-4: Runtime secret policy and leak scanning
 
 Build on previous branch with a separate, deterministic security control. Read each file's teaching comments and test the negative case before trusting the positive case.
 
 ## Components and change
-- app/features/feature_release/services/service_verify_artifact_provenance.py — added security policy
+- app/features/feature_release/services/service_check_secret_policy.py — added security policy
 
 ## Run and verify
 
