@@ -4,7 +4,7 @@
     "slug": "secure-ai-delivery-pipeline",
     "name": "Secure AI Delivery Pipeline"
   },
-  "current": "content",
+  "current": "done",
   "stages": {
     "intro": {
       "status": "done",
@@ -49,12 +49,24 @@
       "updated_by": "api-key:for-chatgpt-test-2"
     },
     "content": {
-      "status": "in_progress",
-      "summary": "Creating 8 categories and 45 grounded code-linked lessons after verified 7/7 CI and six-tab INKP.",
+      "status": "done",
+      "summary": "MCP read-back verified 8 active categories and 45 public lessons (Overview 18, STEP-1 through STEP-6 each 4, Conclusion 3), linked CRD trees, STEP INKP views, code links and introductory Python security examples. GitHub Actions 7/7; offline educational policies, not live supply-chain deployment.",
       "started_at": "2026-10-10T11:47:17.446Z",
-      "finished_at": null,
-      "updated_by": "api-key:for-chatgpt-test-2"
+      "finished_at": "2026-10-10T11:53:31.804Z",
+      "updated_by": "api-key:for-chatgpt-test-2",
+      "outputs": {
+        "portal_url": "/practical-case/secure-ai-delivery-pipeline",
+        "categories": 8,
+        "items": 45,
+        "overview": 18,
+        "step_items": 24,
+        "conclusion": 3,
+        "ci_jobs_success": 7,
+        "inkp_tabs": 6,
+        "missing_links": 0,
+        "structural_qa": true
+      }
     }
   },
-  "updated_at": "2026-10-10T11:47:17.446Z"
+  "updated_at": "2026-10-10T11:53:31.804Z"
 }
