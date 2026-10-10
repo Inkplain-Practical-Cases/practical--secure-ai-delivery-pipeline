@@ -1,0 +1,242 @@
+{
+  "version": "1.0",
+  "name": "Secure AI Delivery Pipeline STEP-1",
+  "source": {
+    "revision": "step-01-release-manifest-validation"
+  },
+  "flows": [
+    {
+      "id": "release_validation",
+      "name": "Release validation"
+    }
+  ],
+  "step": {
+    "no": 1,
+    "of": 6,
+    "title": "Release manifest validation",
+    "branch": "step-01-release-manifest-validation",
+    "previous": null,
+    "removed": []
+  },
+  "components": [
+    {
+      "id": "be.validate_release",
+      "name": "validate_release",
+      "kind": "function",
+      "side": "backend",
+      "layer": "door",
+      "description": "Delegates typed data through ICS release-validation layer.",
+      "flows": [
+        "release_validation"
+      ],
+      "source": {
+        "file": "app/features/feature_release/router.py",
+        "symbol": "validate_release",
+        "revision": "step-01-release-manifest-validation",
+        "lines": [
+          1,
+          60
+        ]
+      },
+      "owner": "release",
+      "component_reason": "Explicit ICS call boundary",
+      "status": "observed",
+      "inputs": [
+        {
+          "id": "in-1",
+          "name": "typed request and injected policy",
+          "description": "Request contract"
+        }
+      ],
+      "validations": [],
+      "operations": [
+        {
+          "id": "op-1",
+          "title": "Invoke handle_validate_release",
+          "origin": "imported",
+          "description": "Delegates to next layer",
+          "show": true,
+          "calls": {
+            "component": "be.handle_validate_release",
+            "type": "call",
+            "label": "delegates",
+            "evidence": "app/features/feature_release/router.py"
+          }
+        }
+      ],
+      "outputs": [
+        {
+          "id": "out-1",
+          "name": "validated release or policy result",
+          "description": "Typed output"
+        }
+      ],
+      "attributes": {},
+      "step_change": "added"
+    },
+    {
+      "id": "be.handle_validate_release",
+      "name": "handle_validate_release",
+      "kind": "function",
+      "side": "backend",
+      "layer": "handler",
+      "description": "Delegates typed data through ICS release-validation layer.",
+      "flows": [
+        "release_validation"
+      ],
+      "source": {
+        "file": "app/features/feature_release/handlers/handle_validate_release.py",
+        "symbol": "handle_validate_release",
+        "revision": "step-01-release-manifest-validation",
+        "lines": [
+          1,
+          60
+        ]
+      },
+      "owner": "release",
+      "component_reason": "Explicit ICS call boundary",
+      "status": "observed",
+      "inputs": [
+        {
+          "id": "in-1",
+          "name": "typed request and injected policy",
+          "description": "Request contract"
+        }
+      ],
+      "validations": [],
+      "operations": [
+        {
+          "id": "op-1",
+          "title": "Invoke service_validate_release",
+          "origin": "imported",
+          "description": "Delegates to next layer",
+          "show": true,
+          "calls": {
+            "component": "be.service_validate_release",
+            "type": "call",
+            "label": "delegates",
+            "evidence": "app/features/feature_release/handlers/handle_validate_release.py"
+          }
+        }
+      ],
+      "outputs": [
+        {
+          "id": "out-1",
+          "name": "validated release or policy result",
+          "description": "Typed output"
+        }
+      ],
+      "attributes": {},
+      "step_change": "added"
+    },
+    {
+      "id": "be.service_validate_release",
+      "name": "service_validate_release",
+      "kind": "function",
+      "side": "backend",
+      "layer": "service",
+      "description": "Validates exact allowlisted dependency versions and calculates canonical SHA-256 manifest digest.",
+      "flows": [
+        "release_validation"
+      ],
+      "source": {
+        "file": "app/features/feature_release/services/service_validate_release.py",
+        "symbol": "service_validate_release",
+        "revision": "step-01-release-manifest-validation",
+        "lines": [
+          1,
+          60
+        ]
+      },
+      "owner": "release",
+      "component_reason": "Explicit ICS call boundary",
+      "status": "observed",
+      "inputs": [
+        {
+          "id": "in-1",
+          "name": "typed request and injected policy",
+          "description": "Request contract"
+        }
+      ],
+      "validations": [
+        {
+          "id": "v-1",
+          "description": "Reject duplicates, unapproved versions, digest mismatch"
+        }
+      ],
+      "operations": [
+        {
+          "id": "op-1",
+          "title": "Invoke allowed_versions",
+          "origin": "imported",
+          "description": "Delegates to next layer",
+          "show": true,
+          "calls": {
+            "component": "be.allowed_versions",
+            "type": "call",
+            "label": "delegates",
+            "evidence": "app/features/feature_release/services/service_validate_release.py"
+          }
+        }
+      ],
+      "outputs": [
+        {
+          "id": "out-1",
+          "name": "validated release or policy result",
+          "description": "Typed output"
+        }
+      ],
+      "attributes": {},
+      "step_change": "added"
+    },
+    {
+      "id": "be.allowed_versions",
+      "name": "allowed_versions",
+      "kind": "function",
+      "side": "backend",
+      "layer": "provider",
+      "description": "Delegates typed data through ICS release-validation layer.",
+      "flows": [
+        "release_validation"
+      ],
+      "source": {
+        "file": "app/providers/manifest/in_memory_manifest_provider.py",
+        "symbol": "allowed_versions",
+        "revision": "step-01-release-manifest-validation",
+        "lines": [
+          1,
+          60
+        ]
+      },
+      "owner": "release",
+      "component_reason": "Explicit ICS call boundary",
+      "status": "observed",
+      "inputs": [
+        {
+          "id": "in-1",
+          "name": "none",
+          "description": "Request contract"
+        }
+      ],
+      "validations": [],
+      "operations": [
+        {
+          "id": "op-1",
+          "title": "Return pinned allowlist",
+          "origin": "inline",
+          "description": "Reads fixture policy",
+          "show": true
+        }
+      ],
+      "outputs": [
+        {
+          "id": "out-1",
+          "name": "validated release or policy result",
+          "description": "Typed output"
+        }
+      ],
+      "attributes": {},
+      "step_change": "added"
+    }
+  ]
+}
