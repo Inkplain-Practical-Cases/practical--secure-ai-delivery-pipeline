@@ -1,7 +1,8 @@
-# Matrix validates every learning branch and main with offline deterministic tests.
+# Seven-isolated-job matrix checks each cumulative learning branch and final main.
 name: Secure AI delivery matrix
 on:
   push:
+    branches: [main]
   workflow_dispatch:
 permissions:
   contents: read
@@ -11,13 +12,22 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        python-version: ['3.12']
+        ref:
+          - step-01-release-manifest-validation
+          - step-02-container-image-and-non-root-runtime
+          - step-03-immutable-artifact-and-registry-provenan
+          - step-04-runtime-secret-policy-and-leak-scanning
+          - step-05-approval-gates-staging-and-rollback
+          - step-06-security-regressions-and-ci-matrix
+          - main
     steps:
       - uses: actions/checkout@v4
+        with:
+          ref: ${{ matrix.ref }}
       - uses: actions/setup-python@v5
         with:
-          python-version: ${{ matrix.python-version }}
-      - name: Install locked runtime and test dependencies
+          python-version: '3.12'
+      - name: Install locked dependencies
         run: python -m pip install -r requirements.lock
-      - name: Run safety regression suite
+      - name: Run branch pytest suite
         run: python -m pytest -q
