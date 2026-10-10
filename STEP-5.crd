@@ -1,8 +1,8 @@
 {
   "version": "1.0",
-  "name": "Secure AI Delivery Pipeline STEP-4",
+  "name": "Secure AI Delivery Pipeline STEP-5",
   "source": {
-    "revision": "step-04-runtime-secret-policy-and-leak-scanning"
+    "revision": "step-05-approval-gates-staging-and-rollback"
   },
   "flows": [
     {
@@ -11,11 +11,11 @@
     }
   ],
   "step": {
-    "no": 4,
+    "no": 5,
     "of": 6,
-    "title": "Runtime secret policy and leak scanning",
-    "branch": "step-04-runtime-secret-policy-and-leak-scanning",
-    "previous": "STEP-3.crd",
+    "title": "Approval gates staging and rollback",
+    "branch": "step-05-approval-gates-staging-and-rollback",
+    "previous": "STEP-4.crd",
     "removed": []
   },
   "components": [
@@ -32,7 +32,7 @@
       "source": {
         "file": "app/features/feature_release/router.py",
         "symbol": "validate_release",
-        "revision": "step-04-runtime-secret-policy-and-leak-scanning",
+        "revision": "step-05-approval-gates-staging-and-rollback",
         "lines": [
           1,
           60
@@ -87,7 +87,7 @@
       "source": {
         "file": "app/features/feature_release/handlers/handle_validate_release.py",
         "symbol": "handle_validate_release",
-        "revision": "step-04-runtime-secret-policy-and-leak-scanning",
+        "revision": "step-05-approval-gates-staging-and-rollback",
         "lines": [
           1,
           60
@@ -142,7 +142,7 @@
       "source": {
         "file": "app/features/feature_release/services/service_validate_release.py",
         "symbol": "service_validate_release",
-        "revision": "step-04-runtime-secret-policy-and-leak-scanning",
+        "revision": "step-05-approval-gates-staging-and-rollback",
         "lines": [
           1,
           60
@@ -202,7 +202,7 @@
       "source": {
         "file": "app/providers/manifest/in_memory_manifest_provider.py",
         "symbol": "allowed_versions",
-        "revision": "step-04-runtime-secret-policy-and-leak-scanning",
+        "revision": "step-05-approval-gates-staging-and-rollback",
         "lines": [
           1,
           60
@@ -251,7 +251,7 @@
       "source": {
         "file": "app/features/feature_release/services/service_check_container_policy.py",
         "symbol": "service_check_container_policy",
-        "revision": "step-04-runtime-secret-policy-and-leak-scanning",
+        "revision": "step-05-approval-gates-staging-and-rollback",
         "lines": [
           1,
           14
@@ -305,7 +305,7 @@
       "source": {
         "file": "app/features/feature_release/services/service_verify_artifact_provenance.py",
         "symbol": "service_verify_artifact_provenance",
-        "revision": "step-04-runtime-secret-policy-and-leak-scanning",
+        "revision": "step-05-approval-gates-staging-and-rollback",
         "lines": [
           1,
           13
@@ -359,10 +359,118 @@
       "source": {
         "file": "app/features/feature_release/services/service_check_secret_policy.py",
         "symbol": "service_check_secret_policy",
-        "revision": "step-04-runtime-secret-policy-and-leak-scanning",
+        "revision": "step-05-approval-gates-staging-and-rollback",
         "lines": [
           1,
           10
+        ]
+      },
+      "owner": "release",
+      "component_reason": "Explicit independently tested security policy",
+      "status": "observed",
+      "inputs": [
+        {
+          "id": "input",
+          "name": "typed input",
+          "description": "Validated input"
+        }
+      ],
+      "validations": [
+        {
+          "id": "reject",
+          "description": "Fail closed on invalid or unauthorized input"
+        }
+      ],
+      "operations": [
+        {
+          "id": "policy",
+          "title": "Evaluate security policy",
+          "origin": "inline",
+          "description": "Deterministic checks",
+          "show": true
+        }
+      ],
+      "outputs": [
+        {
+          "id": "output",
+          "name": "decision",
+          "description": "Verified result"
+        }
+      ],
+      "attributes": {},
+      "step_change": "unchanged"
+    },
+    {
+      "id": "be.service_decide_promotion",
+      "name": "service_decide_promotion",
+      "kind": "function",
+      "side": "backend",
+      "layer": "service",
+      "description": "Approval gates staging and rollback security control. See checked Python implementation.",
+      "flows": [
+        "release_validation"
+      ],
+      "source": {
+        "file": "app/features/feature_release/services/service_decide_promotion.py",
+        "symbol": "service_decide_promotion",
+        "revision": "step-05-approval-gates-staging-and-rollback",
+        "lines": [
+          1,
+          11
+        ]
+      },
+      "owner": "release",
+      "component_reason": "Explicit independently tested security policy",
+      "status": "observed",
+      "inputs": [
+        {
+          "id": "input",
+          "name": "typed input",
+          "description": "Validated input"
+        }
+      ],
+      "validations": [
+        {
+          "id": "reject",
+          "description": "Fail closed on invalid or unauthorized input"
+        }
+      ],
+      "operations": [
+        {
+          "id": "policy",
+          "title": "Evaluate security policy",
+          "origin": "inline",
+          "description": "Deterministic checks",
+          "show": true
+        }
+      ],
+      "outputs": [
+        {
+          "id": "output",
+          "name": "decision",
+          "description": "Verified result"
+        }
+      ],
+      "attributes": {},
+      "step_change": "added"
+    },
+    {
+      "id": "be.service_resolve_rollback",
+      "name": "service_resolve_rollback",
+      "kind": "function",
+      "side": "backend",
+      "layer": "service",
+      "description": "Approval gates staging and rollback security control. See checked Python implementation.",
+      "flows": [
+        "release_validation"
+      ],
+      "source": {
+        "file": "app/features/feature_release/services/service_resolve_rollback.py",
+        "symbol": "service_resolve_rollback",
+        "revision": "step-05-approval-gates-staging-and-rollback",
+        "lines": [
+          1,
+          6
         ]
       },
       "owner": "release",

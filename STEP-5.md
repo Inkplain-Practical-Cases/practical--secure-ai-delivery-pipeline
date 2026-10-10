@@ -1,9 +1,10 @@
-# STEP-4: Runtime secret policy and leak scanning
+# STEP-5: Approval gates staging and rollback
 
 Build on previous branch with a separate, deterministic security control. Read each file's teaching comments and test the negative case before trusting the positive case.
 
 ## Components and change
-- app/features/feature_release/services/service_check_secret_policy.py — added security policy
+- app/features/feature_release/services/service_decide_promotion.py — added security policy
+- app/features/feature_release/services/service_resolve_rollback.py — added security policy
 
 ## Run and verify
 
