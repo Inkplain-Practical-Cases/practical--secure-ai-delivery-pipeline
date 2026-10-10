@@ -47,7 +47,14 @@
       "started_at": "2026-10-10T11:47:02.257Z",
       "finished_at": "2026-10-10T11:47:02.257Z",
       "updated_by": "api-key:for-chatgpt-test-2"
+    },
+    "content": {
+      "status": "in_progress",
+      "summary": "Creating 8 categories and 45 grounded code-linked lessons after verified 7/7 CI and six-tab INKP.",
+      "started_at": "2026-10-10T11:47:17.446Z",
+      "finished_at": null,
+      "updated_by": "api-key:for-chatgpt-test-2"
     }
   },
-  "updated_at": "2026-10-10T11:47:02.257Z"
+  "updated_at": "2026-10-10T11:47:17.446Z"
 }
