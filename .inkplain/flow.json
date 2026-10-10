@@ -1,0 +1,39 @@
+{
+  "practical_case": {
+    "id": "WJNHubxkb3UygjDgn9Dw",
+    "slug": "secure-ai-delivery-pipeline",
+    "name": "Secure AI Delivery Pipeline"
+  },
+  "current": "inkp",
+  "stages": {
+    "intro": {
+      "status": "done",
+      "summary": "Verified Junior FDE case, skill links, seven substantive introduction sections and HTML architecture diagram; cover reused from Media Library.",
+      "started_at": "2026-10-10T09:09:06.872Z",
+      "finished_at": "2026-10-10T09:11:22.162Z",
+      "updated_by": "api-key:for-chatgpt-test-2",
+      "outputs": {
+        "portal_url": "/practical-case/secure-ai-delivery-pipeline",
+        "level": "junior",
+        "skills_linked": 6,
+        "intro_sections": 7,
+        "cover_reused": true
+      }
+    },
+    "repo": {
+      "status": "done",
+      "summary": "Six cumulative GitHub STEP branches, verified main/FINAL.crd and 7-branch GitHub Actions pytest matrix successful. Educational synthetic security pipeline, not production signing or deployment.",
+      "outputs": {
+        "repo_url": "https://github.com/Inkplain-Practical-Cases/practical--secure-ai-delivery-pipeline",
+        "partial_steps": 1,
+        "steps": 6,
+        "ci_run_id": 38049588849,
+        "ci_status": "success"
+      },
+      "started_at": "2026-10-10T10:03:47.282Z",
+      "finished_at": "2026-10-10T11:46:58.312Z",
+      "updated_by": "api-key:for-chatgpt-test-2"
+    }
+  },
+  "updated_at": "2026-10-10T11:46:58.312Z"
+}
