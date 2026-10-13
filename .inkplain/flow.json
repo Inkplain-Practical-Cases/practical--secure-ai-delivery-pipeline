@@ -50,7 +50,7 @@
     },
     "content": {
       "status": "done",
-      "summary": "MCP read-back verified 8 active categories and 45 public lessons (Overview 18, STEP-1 through STEP-6 each 4, Conclusion 3), linked CRD trees, STEP INKP views, code links and introductory Python security examples. GitHub Actions 7/7; offline educational policies, not live supply-chain deployment.",
+      "summary": "Source-backed persistence audit completed: InMemoryManifestProvider exposes offline release fixtures; rollback and policy checks only validate inputs and return decisions. No source-derived STEP-N.erd or Database lesson required.",
       "started_at": "2026-10-10T11:47:17.446Z",
       "finished_at": "2026-10-10T11:53:31.804Z",
       "updated_by": "api-key:for-chatgpt-test-2",
@@ -64,9 +64,15 @@
         "ci_jobs_success": 7,
         "inkp_tabs": 6,
         "missing_links": 0,
-        "structural_qa": true
+        "structural_qa": true,
+        "erd_audit_complete": true,
+        "erd_applicable_steps": [],
+        "erd_not_applicable": true,
+        "erd_lessons_created": 0,
+        "erd_item_title": "Database (Entity) Relations",
+        "erd_audit_note": "InMemoryManifestProvider exposes offline release fixtures; rollback and policy checks only validate inputs and return decisions."
       }
     }
   },
-  "updated_at": "2026-10-10T11:53:31.804Z"
+  "updated_at": "2026-10-13T15:14:39.918Z"
 }
