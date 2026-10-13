@@ -1,0 +1,71 @@
+{
+  "erd_version": 1,
+  "name": "secure-ai-delivery-pipeline",
+  "step": "final",
+  "engine": "sqlite",
+  "generated_from": [
+    "app/providers/provider_record_request_audit.py",
+    "app/core/request_audit_middleware.py",
+    "app/main.py"
+  ],
+  "entities": [
+    {
+      "name": "release_api_requests",
+      "kind": "table",
+      "step_change": "unchanged",
+      "source": "app/providers/provider_record_request_audit.py",
+      "description": "Secure release API HTTP metadata, not artifact manifests or secrets.",
+      "fields": [
+        {
+          "name": "id",
+          "type": "TEXT",
+          "key": "PK"
+        },
+        {
+          "name": "route",
+          "type": "TEXT"
+        },
+        {
+          "name": "method",
+          "type": "TEXT"
+        },
+        {
+          "name": "created_at",
+          "type": "TEXT"
+        }
+      ]
+    },
+    {
+      "name": "release_api_events",
+      "kind": "table",
+      "step_change": "unchanged",
+      "source": "app/providers/provider_record_request_audit.py",
+      "description": "Recorded release HTTP status and latency for each request.",
+      "fields": [
+        {
+          "name": "id",
+          "type": "INTEGER",
+          "key": "PK"
+        },
+        {
+          "name": "request_id",
+          "type": "TEXT",
+          "references": "release_api_requests.id"
+        },
+        {
+          "name": "http_status",
+          "type": "INTEGER"
+        },
+        {
+          "name": "duration_ms",
+          "type": "REAL"
+        },
+        {
+          "name": "occurred_at",
+          "type": "TEXT"
+        }
+      ]
+    }
+  ],
+  "relations": []
+}
