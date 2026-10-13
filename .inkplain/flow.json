@@ -50,7 +50,7 @@
     },
     "content": {
       "status": "done",
-      "summary": "Source-backed persistence audit completed: InMemoryManifestProvider exposes offline release fixtures; rollback and policy checks only validate inputs and return decisions. No source-derived STEP-N.erd or Database lesson required.",
+      "summary": "Added SQLite release HTTP audit at STEP-6, source-derived ERD, FINAL.erd, .inkp tab and sidebar database lesson; MCP read-back verified.",
       "started_at": "2026-10-10T11:47:17.446Z",
       "finished_at": "2026-10-10T11:53:31.804Z",
       "updated_by": "api-key:for-chatgpt-test-2",
@@ -66,13 +66,15 @@
         "missing_links": 0,
         "structural_qa": true,
         "erd_audit_complete": true,
-        "erd_applicable_steps": [],
-        "erd_not_applicable": true,
-        "erd_lessons_created": 0,
+        "erd_applicable_steps": [
+          6
+        ],
+        "erd_not_applicable": false,
+        "erd_lessons_created": 1,
         "erd_item_title": "Database (Entity) Relations",
         "erd_audit_note": "InMemoryManifestProvider exposes offline release fixtures; rollback and policy checks only validate inputs and return decisions."
       }
     }
   },
-  "updated_at": "2026-10-13T15:14:39.918Z"
+  "updated_at": "2026-10-13T16:14:31.176Z"
 }
