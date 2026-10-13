@@ -16,3 +16,6 @@ Expected: pytest passes; each unauthorized, invalid, or leaked input is rejected
 
 ## Next
 This is the final cumulative step.
+
+## Database (Entity) Relations
+SQLite stores release HTTP request and event metadata, not policy fixtures. See STEP-6.erd and STEP-6-ERD.
